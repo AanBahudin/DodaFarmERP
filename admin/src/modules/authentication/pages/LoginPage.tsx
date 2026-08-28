@@ -20,7 +20,6 @@ const LoginPage = () => {
 
   const onSubmit = (data: AdminLoginDataSchema) => {
     console.log(data);
-
   }
 
   return (
