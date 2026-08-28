@@ -1,9 +1,10 @@
-import {Button} from '@/components/ui/button'
+import {authRouter} from './routes'
+import { RouterProvider } from 'react-router'
 
 const App = () => {
   return (
     <div className='w-full'>
-      <Button variant='destructive' size='lg'>Hapus Barang</Button>
+      <RouterProvider router={authRouter} />
     </div>
 
   )
