@@ -1,15 +1,7 @@
 import { Button } from "@/components/ui/button"
 import {Eye, EyeClosed} from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import {
-  Field,
-  FieldLabel,
-} from "@/components/ui/field"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Field, FieldLabel } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import Logo from "@/shared/components/Logo"
 import { useState } from "react"
@@ -36,22 +28,13 @@ const LoginPage = () => {
           <CardContent className="flex flex-col gap-y-4">
               <Field>
                 <FieldLabel htmlFor="input-field-username">Email</FieldLabel>
-                <Input
-                  id="input-field-username"
-                  type="email"
-                  placeholder="Enter your username"
-                />
+                <Input id="input-field-username" type="email" placeholder="Enter your username" />
               </Field>
 
               <Field>
                 <FieldLabel htmlFor="input-field-username">Password</FieldLabel>
                 <div className="flex items-center justify-between gap-x-2">
-                  <Input
-                    id="input-field-username"
-                    type={showPass ? 'text' : 'password'}
-                    placeholder="Enter your password"
-                  />
-
+                  <Input id="input-field-username" type={showPass ? 'text' : 'password'} placeholder="Enter your password" />
                   <Button className="mt-2" onClick={() => setShowPass(!showPass)}>
                     {showPass ? <EyeClosed /> : <Eye />}
                   </Button>
