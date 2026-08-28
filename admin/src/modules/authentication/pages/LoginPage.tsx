@@ -15,10 +15,13 @@ const LoginPage = () => {
   const {control, handleSubmit, formState: {errors, isValid}} = useForm<AdminLoginDataSchema>({
     resolver: zodResolver(AdminLoginDataSchema),
     defaultValues: {email: "", password: ""},
-    mode: "onSubmit"
+    mode: "onChange"
   })
 
-  const onSubmit = handleSubmit((data) => console.log(data))
+  const onSubmit = (data: AdminLoginDataSchema) => {
+    console.log(data);
+
+  }
 
   return (
     <section className="w-screen h-screen bg-background">
@@ -35,14 +38,14 @@ const LoginPage = () => {
             <CardTitle className="text-2xl font-semibold my-4">Login</CardTitle>
           </div>
 
-          <form onSubmit={onSubmit} className="w-full flex flex-col gap-y-4">
+          <form onSubmit={handleSubmit(onSubmit)} className="w-full flex flex-col gap-y-4">
               <Field>
                 <div className="flex w-full items-center justify-between">
                   <FieldLabel htmlFor="email">Email</FieldLabel>
                   <h5 className="text-destructive text-xs">{errors.email?.message}</h5>
                 </div>
                 <Controller control={control} name="email" render={({field}) => (
-                  <Input placeholder="Enter your email" autoComplete="off" value={field.value} onChange={field.onChange} onBlur={field.onBlur} />
+                  <Input placeholder="Masukkan email anda" autoComplete="off" value={field.value} onChange={field.onChange} onBlur={field.onBlur} />
                 )}/>
               </Field>
 
@@ -53,10 +56,10 @@ const LoginPage = () => {
                 </div>
                 <div className="flex items-center justify-between gap-x-2">
                   <Controller control={control} name="password" render={({field}) => (
-                    <Input type={showPass ? 'text' : 'password'} placeholder="Enter your password" value={field.value} onChange={field.onChange} onBlur={field.onBlur} />
+                    <Input type={showPass ? 'text' : 'password'} placeholder="*********" value={field.value} onChange={field.onChange} onBlur={field.onBlur} />
                   )}/>
 
-                  <Button className="mt-2" onClick={() => setShowPass(!showPass)}>
+                  <Button type="button" className="mt-2" onClick={() => setShowPass((prev) => !prev)}>
                     {showPass ? <EyeClosed /> : <Eye />}
                   </Button>
                 </div>

@@ -2,7 +2,7 @@ import {z} from 'zod'
 
 export const AdminLoginDataSchema = z.object({
     email: z
-        .email()
+        .email("Email tidak valid")
         .trim(),
     password: z
         .string()
