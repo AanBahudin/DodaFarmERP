@@ -21,15 +21,16 @@ const sidebarMenu = [
   },
   {
     title: "Data Karyawan",
-    baseUrl: '/karyawan',
+    url: '/karyawan',
     icon: Users,
     items: [
-      { title: "Semua Karyawan", url: "." },
+      { title: "Semua Karyawan", url: "/karyawan" },
       { title: "Tambah Karyawan", url: "/karyawan/tambah" },
     ],
   },
   {
     title: "Produk",
+    url: '/product',
     icon: Package,
     items: [
       { title: "Semua Produk", url: "/product" },
@@ -40,6 +41,7 @@ const sidebarMenu = [
   },
   {
     title: "Penjualan",
+    url: '/penjualan',
     icon: ShoppingBag,
     items: [
       { title: "Ringkasan", url: "/penjualan" },
@@ -50,6 +52,7 @@ const sidebarMenu = [
   },
   {
     title: "Pemasukan",
+    url: '/pemasukan',
     icon: Wallet,
     items: [
       { title: "Ringkasan", url: "/pemasukan" },
@@ -60,12 +63,13 @@ const sidebarMenu = [
   },
   {
     title: "Pengeluaran",
+    url: '/pengeluaran',
     icon: CreditCard,
     items: [
-        { title: "Ringkasan", url: "/products" },
-        { title: "Transaksi", url: "/products/categories" },
-        { title: "Kategori Pengeluaran", url: "/products/categories" },
-        { title: "Laporan", url: "/products/categories" },
+        { title: "Ringkasan", url: "/pengeluaran" },
+        { title: "Transaksi", url: "/pengeluaran/categories" },
+        { title: "Kategori Pengeluaran", url: "/pengeluaran/categories" },
+        { title: "Laporan", url: "/pengeluaran/categories" },
     ]
   },
   {
@@ -82,26 +86,29 @@ const sidebarMenu = [
   },
   {
     title: "Suppliers",
+    url: '/suppliers',
     icon: Contact,
     items: [
-        { title: "Ringkasan", url: "/products" },
-        { title: "Transaksi", url: "/products/categories" },
-        { title: "Kategori Pengeluaran", url: "/products/categories" },
-        { title: "Laporan", url: "/products/categories" },
+        { title: "Ringkasan", url: "/suppliers" },
+        { title: "Transaksi", url: "/suppliers/categories" },
+        { title: "Kategori Pengeluaran", url: "/suppliers/categories" },
+        { title: "Laporan", url: "/suppliers/categories" },
     ]
   },
   {
     title: "Pengguna",
+    url: '/pengguna',
     icon: Users2,
     items: [
-        { title: "Ringkasan", url: "/products" },
-        { title: "Pelanggan", url: "/products/categories" },
-        { title: "Mitra", url: "/products/categories" },
-        { title: "Laporan", url: "/products/categories" },
+        { title: "Ringkasan", url: "/pengguna" },
+        { title: "Pelanggan", url: "/pengguna/categories" },
+        { title: "Mitra", url: "/pengguna/categories" },
+        { title: "Laporan", url: "/pengguna/categories" },
     ]
   },
   {
     title: "Pengaturan",
+    url: '/pengaturan',
     icon: Settings,
     items: [
       { title: "General", url: "/settings" },
