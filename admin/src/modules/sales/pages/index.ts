@@ -1,2 +1,4 @@
 export {default as DetailSalePage} from './DetailSalePage'
 export {default as SalesPage} from './SalesPage'
+export {default as SalesReportPage} from './SalesReportPage'
+export {default as SalesTransaksiPage} from './SalesTransaksiPage'

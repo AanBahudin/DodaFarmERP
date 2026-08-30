@@ -6,6 +6,9 @@ import employeeRoute from '@/modules/employees/route/employeeRoute'
 import expansesRoute from '@/modules/expanses/routes/expansesRoute'
 import incomeRoutes from '@/modules/incomes/route/incomeRoute'
 import mitraRoute from '@/modules/mitra/route/mitraRoute'
+import orderRoute from '@/modules/orders/route/ordersRoute'
+import productsRoute from '@/modules/products/routes/productsRoute'
+import salesRoute from '@/modules/sales/route/salesRoute'
 
 const mainRoute = [
     {
@@ -27,7 +30,14 @@ const mainRoute = [
             // income route,
             {...incomeRoutes},
             // mitra page
-            {...mitraRoute}
+            {...mitraRoute},
+            // expanses route
+            {...orderRoute},
+            // product route
+            {...productsRoute},
+            // transaksi route
+            {...salesRoute}
+
         ]
     }
 ]

@@ -1,3 +1,6 @@
+export {default as AddProductPage} from './AddProductPage'
 export {default as DetailProductPage} from './DetailProductPage'
+export {default as ProductCategory} from './ProductCategoryPage'
 export {default as ProductsPage} from './ProductsPage'
+export {default as ProductStockPage} from './ProductStockPage'
 export {default as UpdateProductPage} from './UpdateProductPage'
