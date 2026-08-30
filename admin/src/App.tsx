@@ -1,10 +1,13 @@
-import {authRouter} from './routes'
-import { RouterProvider } from 'react-router'
+import { createBrowserRouter, RouterProvider } from 'react-router'
+import {mainRouter} from './routes'
 
 const App = () => {
+
+  const route = createBrowserRouter(mainRouter)
+
   return (
     <div className='w-full'>
-      <RouterProvider router={authRouter} />
+      <RouterProvider router={route} />
     </div>
 
   )

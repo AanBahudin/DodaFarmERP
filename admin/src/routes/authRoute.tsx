@@ -1,13 +1,11 @@
-import {createBrowserRouter} from 'react-router'
+import {type RouteObject} from 'react-router'
 import { LoginPage } from '@/modules/authentication/pages'
 
-const authRouter = createBrowserRouter([
+const authRouter: RouteObject[] = [
     {
         path: '/auth',
-        children: [
-            {index: true, id: 'login', element: <LoginPage />}
-        ]
+        element: <LoginPage />
     }
-])
+]
 
 export default authRouter
