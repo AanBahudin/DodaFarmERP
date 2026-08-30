@@ -8,7 +8,8 @@ import {
   Package2,
   ShoppingBag,
   Truck,
-  Contact
+  Contact,
+  Users2
 } from "lucide-react"
 
 const sidebarMenu = [
@@ -41,18 +42,20 @@ const sidebarMenu = [
     title: "Penjualan",
     icon: ShoppingBag,
     items: [
-        { title: "Ringkasan", url: "/penjualan" },
-        { title: "Transaksi", url: "/penjualan/transaksi" },
-        { title: "Sumber Pemasukan", url: "/penjualan/report" },
+      { title: "Ringkasan", url: "/penjualan" },
+      { title: "Tambah Penjualan", url: "/penjualan/tambah" },
+      { title: "Transaksi", url: "/penjualan/transaksi" },
+      { title: "Laporan", url: "/penjualan/report" },
     ]
   },
   {
     title: "Pemasukan",
     icon: Wallet,
     items: [
-        { title: "Ringkasan", url: "/products" },
-        { title: "Transaksi", url: "/products/categories" },
-        { title: "Laporan", url: "/products/categories" },
+      { title: "Ringkasan", url: "/pemasukan" },
+      { title: "Tambah", url: "/pemasukan/tambah" },
+      { title: "Transaksi", url: "/pemasukan/transaksi" },
+      { title: "Laporan", url: "/pemasukan/report" },
     ]
   },
   {
@@ -89,7 +92,7 @@ const sidebarMenu = [
   },
   {
     title: "Pengguna",
-    icon: Contact,
+    icon: Users2,
     items: [
         { title: "Ringkasan", url: "/products" },
         { title: "Pelanggan", url: "/products/categories" },
@@ -98,7 +101,7 @@ const sidebarMenu = [
     ]
   },
   {
-    title: "Settings",
+    title: "Pengaturan",
     icon: Settings,
     items: [
       { title: "General", url: "/settings" },

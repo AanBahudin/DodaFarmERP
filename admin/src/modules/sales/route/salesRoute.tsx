@@ -1,5 +1,5 @@
 import type { RouteObject } from "react-router";
-import { SalesPage, SalesReportPage, SalesTransaksiPage } from "../pages";
+import { AddPenjualanPage, SalesPage, SalesReportPage, SalesTransaksiPage } from "../pages";
 
 
 const salesRoute : RouteObject = {
@@ -8,6 +8,10 @@ const salesRoute : RouteObject = {
         {
             index: true,
             element: <SalesPage />
+        },
+        {
+            path: "tambah",
+            element: <AddPenjualanPage />
         },
         {
             path: 'transaksi',

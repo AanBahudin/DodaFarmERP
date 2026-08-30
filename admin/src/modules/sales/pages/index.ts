@@ -1,3 +1,4 @@
+export {default as AddPenjualanPage} from './AddPenjualanPage'
 export {default as DetailSalePage} from './DetailSalePage'
 export {default as SalesPage} from './SalesPage'
 export {default as SalesReportPage} from './SalesReportPage'

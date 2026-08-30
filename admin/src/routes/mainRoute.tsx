@@ -36,7 +36,9 @@ const mainRoute = [
             // product route
             {...productsRoute},
             // transaksi route
-            {...salesRoute}
+            {...salesRoute},
+            // income route
+            {...incomeRoutes}
 
         ]
     }

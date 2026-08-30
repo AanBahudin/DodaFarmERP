@@ -1,3 +1,5 @@
 export {default as AddIncomePage} from './AddIncomePage'
 export {default as DetailIncomePage} from './DetailIncomePage'
 export {default as IncomePage} from './IncomePage'
+export {default as IncomeReportPage} from './IncomeReportPage'
+export {default as IncomeTransactionPage} from './IncomeTransactionPage'
