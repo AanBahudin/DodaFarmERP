@@ -6,11 +6,12 @@ const HomeLayout = () => {
   return (
     <div className="w-screen h-screen overflow-hidden flex items-start justify-between">
       {/* sidebar section */}
-      <SidebarProvider className="w-full flex h-screen flex-0">
+      <SidebarProvider className="w-full flex h-screen">
         <AdminSidebar />
 
         <main className="w-full bg-red-50 flex flex-col">
           <SidebarTrigger />
+
           <div>
             <Outlet />
           </div>

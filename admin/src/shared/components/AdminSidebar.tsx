@@ -50,7 +50,7 @@ export function AdminSidebar() {
                                     return (
                                         <NavLink to={menu.url as string} end>
                                             {({ isActive }) => (
-                                                <SidebarMenuButton key={index} className={`w-full flex items-center justify-start py-6 ${isActive && 'bg-sidebar-primary/10'}  hover:bg-sidebar-primary/10`}>
+                                                <SidebarMenuButton key={index} className={`w-full flex items-center justify-start py-6 ${isActive && 'bg-sidebar-primary/10'}  hover:bg-sidebar-primary/5`}>
                                                     <menu.icon className="stroke-sidebar-primary" />
                                                     <a href={menu.url}>
                                                         <span>{menu.title}</span>
@@ -68,7 +68,7 @@ export function AdminSidebar() {
                                                 <SidebarMenuItem className="flex-1">
                                                     {/* Menu utama */}
                                                     <CollapsibleTrigger className='w-full'>
-                                                        <SidebarMenuButton className={`w-full flex items-center justify-between py-6 ${isActive && 'bg-sidebar-primary/10'} hover:bg-sidebar-primary/10`}>
+                                                        <SidebarMenuButton className={`w-full flex items-center justify-between py-6 ${isActive && 'bg-sidebar-primary/10'} hover:bg-sidebar-primary/5`}>
                                                             <menu.icon className="stroke-sidebar-primary" />
                                                             <span>{menu.title}</span>
                                     

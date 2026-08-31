@@ -81,7 +81,7 @@ const sidebarMenu = [
   {
     title: "Pengiriman",
     icon: Truck,
-    url: '/pesanan',
+    url: '/pengiriman',
     items: []
   },
   {
