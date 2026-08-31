@@ -1,6 +1,7 @@
 import { Outlet } from "react-router"
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { SidebarProvider } from "@/components/ui/sidebar"
 import AdminSidebar from "@/shared/components/AdminSidebar"
+import { AdminNavbar } from "@/shared/components"
 
 const HomeLayout = () => {
   return (
@@ -10,11 +11,9 @@ const HomeLayout = () => {
         <AdminSidebar />
 
         <main className="w-full flex flex-col">
-          <div className="w-full p-4 bg-background">
-            <SidebarTrigger className='stroke-sidebar-primary' />
-          </div>
+          <AdminNavbar />
 
-          <div className="h-screen overflow-y-auto">
+          <div className="h-screen overflow-y-auto px-10 py-4">
             <Outlet />
           </div>
         </main>

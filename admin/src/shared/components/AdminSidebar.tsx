@@ -38,8 +38,6 @@ export function AdminSidebar() {
                     <SidebarGroupLabel className="text-xl font-semibold">DodaFarm</SidebarGroupLabel>
                 </main>
             </SidebarHeader>
-
-            <SidebarSeparator className='mt-2' />
             
             <SidebarContent className="flex-1 overflow-y-scroll">
                 <SidebarGroup>

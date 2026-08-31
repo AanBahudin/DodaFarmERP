@@ -58,7 +58,7 @@ const LoginPage = () => {
                     <Input type={showPass ? 'text' : 'password'} placeholder="*********" value={field.value} onChange={field.onChange} onBlur={field.onBlur} />
                   )}/>
 
-                  <Button type="button" className="mt-2" onClick={() => setShowPass((prev) => !prev)}>
+                  <Button type="button" className="" onClick={() => setShowPass((prev) => !prev)}>
                     {showPass ? <EyeClosed /> : <Eye />}
                   </Button>
                 </div>
