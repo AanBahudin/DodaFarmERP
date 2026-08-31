@@ -1,7 +1,9 @@
 
 const DashboardPage = () => {
   return (
-    <div>DashboardPage</div>
+    <section className="h-[300vh]">
+      test
+    </section>
   )
 }
 

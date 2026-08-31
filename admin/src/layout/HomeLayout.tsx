@@ -9,10 +9,12 @@ const HomeLayout = () => {
       <SidebarProvider className="w-full flex h-screen">
         <AdminSidebar />
 
-        <main className="w-full bg-red-50 flex flex-col">
-          <SidebarTrigger />
+        <main className="w-full flex flex-col">
+          <div className="w-full p-4 bg-background">
+            <SidebarTrigger className='stroke-sidebar-primary' />
+          </div>
 
-          <div>
+          <div className="h-screen overflow-y-auto">
             <Outlet />
           </div>
         </main>
