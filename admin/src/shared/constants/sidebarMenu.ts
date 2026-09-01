@@ -2,7 +2,6 @@ import {
   LayoutDashboard,
   Users,
   Package,
-  Settings,
   Wallet,
   CreditCard,
   Package2,
@@ -105,16 +104,7 @@ const sidebarMenu = [
         { title: "Mitra", url: "/pengguna/categories" },
         { title: "Laporan", url: "/pengguna/categories" },
     ]
-  },
-  {
-    title: "Pengaturan",
-    url: '/pengaturan',
-    icon: Settings,
-    items: [
-      { title: "General", url: "/settings" },
-      { title: "Security", url: "/settings/security" },
-    ],
-  },
+  }
 ]
 
 export default sidebarMenu

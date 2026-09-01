@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/breadcrumb"
 import { Separator } from "@/components/ui/separator"
 import { Input } from "@/components/ui/input"
-import { useLocation } from "react-router"
+import { Link, useLocation } from "react-router"
 
 const AdminNavbar = () => {
     
@@ -64,7 +64,7 @@ const AdminNavbar = () => {
                 <Popover>
                     <PopoverTrigger render={(
                         <div className="w-10 h-10 flex relative items-center justify-center p-2 group hover:bg-primary/10 rounded-full duration-200 ease-in-out">
-                            <div className="w-2 h-2 rounded-full bg-primary absolute top-2 right-2"></div>
+                            <div className="w-2 h-2 rounded-full bg-destructive animate-pulse absolute top-2 right-2"></div>
                             <Bell className="stroke-primary group-hover:stroke-primary/80 duration-200 ease-in-out" />
                         </div>
 
@@ -90,7 +90,21 @@ const AdminNavbar = () => {
                     <Truck />
                     Pesanan
                 </Button>
-                <img src={personImg} alt="Profile" className="w-10 h-10 rounded-full object-cover" />
+
+
+                
+                <Popover>
+                    <PopoverTrigger render={(
+                        <img src={personImg} alt="Profile" className="w-10 h-10 rounded-full object-cover" />
+                    )} />
+                    <PopoverContent align="start">
+                            <Link to='/setting'>
+                                <PopoverTitle>Pengaturan</PopoverTitle>
+                            </Link>
+                            <PopoverTitle>Profi saya</PopoverTitle>
+                            <Button>Logout</Button>
+                    </PopoverContent>
+                </Popover>
             </main>
         </section>
   )

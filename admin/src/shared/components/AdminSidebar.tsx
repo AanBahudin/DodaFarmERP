@@ -12,7 +12,6 @@ import {
   SidebarMenuSubButton,
   SidebarFooter,
   SidebarHeader,
-  SidebarSeparator,
 } from "@/components/ui/sidebar"
 
 import {
