@@ -1,6 +1,6 @@
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import personImg from '@/assets/images/person.jpeg'
-import { Bell, Plus, Truck } from "lucide-react"
+import { Bell, MonitorSmartphone, Moon, Plus, Settings, Sun, Truck, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Popover,
@@ -99,9 +99,20 @@ const AdminNavbar = () => {
                     )} />
                     <PopoverContent align="start">
                             <Link to='/setting'>
-                                <PopoverTitle>Pengaturan</PopoverTitle>
+                                <PopoverTitle className="flex gap-x-2 items-center justify-start"><Settings className="stroke-slate-800 w-5 h-5" />Pengaturan</PopoverTitle>
                             </Link>
-                            <PopoverTitle>Profi saya</PopoverTitle>
+                            <Link to='/my'>
+                                <PopoverTitle className="flex gap-x-2 items-center justify-start"><User className="stroke-slate-800 w-5 h-5" />Profil Saya</PopoverTitle>
+                            </Link>
+                            <Separator />
+
+                            <PopoverHeader>
+                                <PopoverTitle>Theme</PopoverTitle>
+                                <PopoverDescription  className="flex gap-x-2 items-center justify-start py-1 pl-2"><MonitorSmartphone className="stroke-slate-800 w-5 h-5" /> System</PopoverDescription>
+                                <PopoverDescription className="flex gap-x-2 items-center justify-start py-1 pl-2"><Sun className="stroke-slate-800 w-5 h-5" /> Light</PopoverDescription>
+                                <PopoverDescription className="flex gap-x-2 items-center justify-start py-1 pl-2"><Moon className="stroke-slate-800 w-5 h-5" /> Dark</PopoverDescription>
+                            </PopoverHeader>
+
                             <Button>Logout</Button>
                     </PopoverContent>
                 </Popover>
