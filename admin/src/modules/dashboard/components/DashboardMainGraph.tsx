@@ -36,7 +36,7 @@ const DashboardMainGraph = () => {
   } satisfies ChartConfig
 
   return (
-    <Card className="w-2/3 bg-accent">
+    <Card className="w-2/3 bg-primary/10">
 
       <main className="p-4 mb-6">
         <CardTitle className="flex items-center gap-x-2">
@@ -49,7 +49,7 @@ const DashboardMainGraph = () => {
         </CardDescription>
       </main>
 
-      <CardContent className="h-75 w-full p-0">
+      <CardContent className="h-60 w-full p-0">
         <ChartContainer
           config={chartConfig}
           className="h-full w-full"

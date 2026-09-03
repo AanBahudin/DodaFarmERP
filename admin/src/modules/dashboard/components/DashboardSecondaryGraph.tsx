@@ -32,7 +32,7 @@ const chartConfig = {
 
 const DashboardSecondaryGraph = () => {
   return (
-    <Card className="flex-1 self-stretch bg-accent flex flex-col">
+    <Card className="flex-1 bg-primary/10 self-stretch flex flex-col">
       <CardHeader className="items-center pb-0">
         <CardTitle className="flex items-center gap-x-2">
           <Boxes className="mb-2 h-5 w-5 stroke-primary" />
@@ -40,10 +40,10 @@ const DashboardSecondaryGraph = () => {
         </CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
-      <CardContent className="flex-1 pb-0">
+      <CardContent className="flex-1 pb-0 h-60">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square max-h-62.5 pb-0 [&_.recharts-pie-label-text]:fill-foreground"
+          className="mx-auto aspect-square h-52 pb-0 [&_.recharts-pie-label-text]:fill-foreground"
         >
           <PieChart>
             <ChartTooltip content={<ChartTooltipContent hideLabel />} />

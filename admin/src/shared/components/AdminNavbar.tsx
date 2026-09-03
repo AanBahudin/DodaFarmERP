@@ -1,87 +1,20 @@
 import { SidebarTrigger } from "@/components/ui/sidebar"
-import personImg from '@/assets/images/person.jpeg'
-import { Bell, MonitorSmartphone, Moon, Plus, Settings, Sun, Truck, User } from "lucide-react"
+import { Plus, Truck } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import {
-  Popover,
-  PopoverContent,
-  PopoverDescription,
-  PopoverHeader,
-  PopoverTitle,
-  PopoverTrigger,
-} from "@/components/ui/popover"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Separator } from "@/components/ui/separator"
 import { Input } from "@/components/ui/input"
-import { Link, useLocation } from "react-router"
+import {NavbarBreadcrumbs, NavbarCollapsibleMenu} from "@/shared/components"
 
 const AdminNavbar = () => {
-    
-    const location = useLocation().pathname.split('/')
-
     return (
         <section className="w-full py-4 px-10 border-b border-slate-200 shadow flex items-center justify-between">
             <main className="flex items-center justify-start gap-x-10">
                 <SidebarTrigger className='stroke-sidebar-primary' />
-
-                <Breadcrumb>
-                    <BreadcrumbList>
-                        <>
-                            <BreadcrumbItem>
-                                <BreadcrumbLink href="/">Home</BreadcrumbLink>
-                            </BreadcrumbItem>
-                            <BreadcrumbSeparator />
-                        </>
-                        {location.map((item: string, index) => {
-                            const isLastItem = index + 1 === location.length
-                            if (item === '' || item === '/') {
-                                return 
-                            }
-                            return (
-                                <>
-                                    <BreadcrumbItem key={index}>
-                                        <BreadcrumbLink className={`capitalize ${isLastItem && 'text-primary font-bold'}`} href={`/${item}`}>{item}</BreadcrumbLink>
-                                    </BreadcrumbItem>
-
-                                    {!isLastItem ? <BreadcrumbSeparator /> : null}
-                                </>
-                            )
-                        })}
-                    </BreadcrumbList>
-                </Breadcrumb>
+                <NavbarBreadcrumbs />
             </main>
 
             <main className="flex items-center gap-x-4">
-
                 <Input placeholder="Cari karyawan, produk" className="w-100 focus-visible:ring-2  focus-visible:ring-primary/40 border-2 text-sm border-slate-400 py-4" />
-
-                <Popover>
-                    <PopoverTrigger render={(
-                        <div className="w-10 h-10 flex relative items-center justify-center p-2 group hover:bg-primary/10 rounded-full duration-200 ease-in-out">
-                            <div className="w-2 h-2 rounded-full bg-destructive animate-pulse absolute top-2 right-2"></div>
-                            <Bell className="stroke-primary group-hover:stroke-primary/80 duration-200 ease-in-out" />
-                        </div>
-
-                    )} />
-                    <PopoverContent align="start" className='w-120 p-0 max-h-[50vh] overflow-y-scroll'>
-                        <PopoverTitle className='p-2'>Notifikasi</PopoverTitle>
-                        <Separator className='p-0 my-1' />
-                        {Array.from({length: 20}).map((_, index) => (
-                            <PopoverHeader key={index} className="hover:bg-primary/20 p-2">
-                                <PopoverTitle>Dimensions</PopoverTitle>
-                                <PopoverDescription>Set the dimensions for the layer.</PopoverDescription>
-                            </PopoverHeader>
-                        ))}
-                    </PopoverContent>
-                </Popover>
-
-                <Button className='flex items-center justify-center'>
+                <Button className='flex items-center justify-center bg-primary/10 text-primary hover:text-white'>
                     <Plus />
                     Produk
                 </Button>
@@ -91,31 +24,7 @@ const AdminNavbar = () => {
                     Pesanan
                 </Button>
 
-
-                
-                <Popover>
-                    <PopoverTrigger render={(
-                        <img src={personImg} alt="Profile" className="w-10 h-10 rounded-full object-cover" />
-                    )} />
-                    <PopoverContent align="start">
-                            <Link to='/setting'>
-                                <PopoverTitle className="flex gap-x-2 items-center justify-start"><Settings className="stroke-slate-800 w-5 h-5" />Pengaturan</PopoverTitle>
-                            </Link>
-                            <Link to='/my'>
-                                <PopoverTitle className="flex gap-x-2 items-center justify-start"><User className="stroke-slate-800 w-5 h-5" />Profil Saya</PopoverTitle>
-                            </Link>
-                            <Separator />
-
-                            <PopoverHeader>
-                                <PopoverTitle>Theme</PopoverTitle>
-                                <PopoverDescription  className="flex gap-x-2 items-center justify-start py-1 pl-2"><MonitorSmartphone className="stroke-slate-800 w-5 h-5" /> System</PopoverDescription>
-                                <PopoverDescription className="flex gap-x-2 items-center justify-start py-1 pl-2"><Sun className="stroke-slate-800 w-5 h-5" /> Light</PopoverDescription>
-                                <PopoverDescription className="flex gap-x-2 items-center justify-start py-1 pl-2"><Moon className="stroke-slate-800 w-5 h-5" /> Dark</PopoverDescription>
-                            </PopoverHeader>
-
-                            <Button>Logout</Button>
-                    </PopoverContent>
-                </Popover>
+                <NavbarCollapsibleMenu />
             </main>
         </section>
   )

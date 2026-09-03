@@ -12,7 +12,7 @@ const DashboardPage = () => {
         <DashboardSecondaryGraph />
       </div>
 
-      <div className="w-full flex items-center gap-x-4 justify-between mt-4">
+      <div className="w-full flex items-start gap-x-4 justify-between mt-4">
         <DashboardOrderTable />
         <QuickAccess />
       </div>

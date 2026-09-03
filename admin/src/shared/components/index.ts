@@ -1,4 +1,6 @@
 export {default as AdminNavbar} from './AdminNavbar'
 export {default as AdminSidebar} from './AdminSidebar'
 export {default as Logo} from './Logo'
+export {default as NavbarBreadcrumbs} from './NavbarBreadcrumbs'
+export {default as NavbarCollapsibleMenu} from './NavbarCollapsibleMenu'
 export {default as Wrapper} from './Wrapper'

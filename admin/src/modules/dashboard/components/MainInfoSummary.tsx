@@ -8,7 +8,7 @@ const MainInfoSummary = () => {
     const mainSummaryDashboard = [
         {title: 'Total Pendapatan', Icon: CircleDollarSign, value: "13.231.010"},
         {title: 'Pendapatan Hari ini', Icon: DollarSign, value: "13.231.010"},
-        {title: 'Pesanan', Icon: Package, value: "92"},
+        {title: 'Pesanan Hari Ini', Icon: Package, value: "92"},
         {title: 'Total Terkirim', Icon: PackageCheck, value: "20"},
     ]
 
