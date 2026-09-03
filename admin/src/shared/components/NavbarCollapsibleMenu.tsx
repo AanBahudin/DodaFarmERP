@@ -11,33 +11,43 @@ import {
 } from "@/components/ui/popover"
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
+import { useTheme, type Theme } from './ThemeProvider'
 
 const NavbarCollapsibleMenu = () => {
-  return (
-    <Popover>
-        <PopoverTrigger render={(
-            <img src={personImg} alt="Profile" className="w-10 h-10 rounded-full object-cover" />
-        )} />
-        <PopoverContent align="start">
-                <Link to='/setting'>
-                    <PopoverTitle className="flex gap-x-2 items-center justify-start"><Settings className="stroke-slate-800 w-5 h-5" />Pengaturan</PopoverTitle>
-                </Link>
-                <Link to='/my'>
-                    <PopoverTitle className="flex gap-x-2 items-center justify-start"><User className="stroke-slate-800 w-5 h-5" />Profil Saya</PopoverTitle>
-                </Link>
-                <Separator />
+    
+    const themeOptions = [
+        {value: 'system', caption: "Sistem", Icon: MonitorSmartphone},
+        {value: 'light', caption: "Terang", Icon: Sun},
+        {value: 'dark', caption: "Gelap", Icon: Moon},
+    ]
 
-                <PopoverHeader>
-                    <PopoverTitle>Theme</PopoverTitle>
-                    <PopoverDescription  className="flex gap-x-2 items-center justify-start py-1 pl-2"><MonitorSmartphone className="stroke-slate-800 w-5 h-5" /> System</PopoverDescription>
-                    <PopoverDescription className="flex gap-x-2 items-center justify-start py-1 pl-2"><Sun className="stroke-slate-800 w-5 h-5" /> Light</PopoverDescription>
-                    <PopoverDescription className="flex gap-x-2 items-center justify-start py-1 pl-2"><Moon className="stroke-slate-800 w-5 h-5" /> Dark</PopoverDescription>
-                </PopoverHeader>
+    const {theme, setTheme} = useTheme()
 
-                <Button>Logout</Button>
-        </PopoverContent>
-    </Popover>
-  )
+    return (
+        <Popover>
+            <PopoverTrigger render={(
+                <img src={personImg} alt="Profile" className="w-10 h-10 rounded-full object-cover" />
+            )} />
+            <PopoverContent align="start">
+                    <Link to='/setting'>
+                        <PopoverTitle className="flex gap-x-2 items-center justify-start"><Settings className="stroke-primary w-5 h-5" />Pengaturan</PopoverTitle>
+                    </Link>
+                    <Link to='/my'>
+                        <PopoverTitle className="flex gap-x-2 items-center justify-start"><User className="stroke-primary w-5 h-5" />Profil Saya</PopoverTitle>
+                    </Link>
+                    <Separator />
+
+                    <PopoverHeader>
+                        <PopoverTitle>Theme</PopoverTitle>
+                        {themeOptions.map((item, index: number) => (
+                            <PopoverDescription key={index} onClick={() => setTheme(item.value as Theme)} className={`flex gap-x-2 items-center ${theme === item.value ? 'bg-primary/10' : ''} justify-start py-1 pl-2 hover:text-primary  cursor-default hover:bg-primary/5 rounded-lg`}><item.Icon className="stroke-primary w-5 h-5" />{item.caption}</PopoverDescription>
+                        ))}
+                    </PopoverHeader>
+
+                    <Button>Logout</Button>
+            </PopoverContent>
+        </Popover>
+    )
 }
 
 export default NavbarCollapsibleMenu

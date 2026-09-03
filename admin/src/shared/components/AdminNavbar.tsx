@@ -3,10 +3,15 @@ import { Plus, Truck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {NavbarBreadcrumbs, NavbarCollapsibleMenu} from "@/shared/components"
+import { useNavigate } from "react-router"
 
 const AdminNavbar = () => {
+
+    const navigate = useNavigate()
+    const handleNavigate = (path: string) => navigate(path)
+
     return (
-        <section className="w-full py-4 px-10 border-b border-slate-200 shadow flex items-center justify-between">
+        <section className="w-full py-4 px-10 border-b border-accent shadow flex items-center justify-between">
             <main className="flex items-center justify-start gap-x-10">
                 <SidebarTrigger className='stroke-sidebar-primary' />
                 <NavbarBreadcrumbs />
@@ -14,12 +19,12 @@ const AdminNavbar = () => {
 
             <main className="flex items-center gap-x-4">
                 <Input placeholder="Cari karyawan, produk" className="w-100 focus-visible:ring-2  focus-visible:ring-primary/40 border-2 text-sm border-slate-400 py-4" />
-                <Button className='flex items-center justify-center bg-primary/10 text-primary hover:text-white'>
+                <Button type="button" onClick={() => handleNavigate("/product/tambah")} className='flex items-center justify-center bg-primary/10 text-primary hover:text-white'>
                     <Plus />
                     Produk
                 </Button>
 
-                <Button className='flex items-center justify-center' variant='outline'>
+                <Button type="button" onClick={() => handleNavigate("/pesanan")} className='flex items-center justify-center' variant='outline'>
                     <Truck />
                     Pesanan
                 </Button>

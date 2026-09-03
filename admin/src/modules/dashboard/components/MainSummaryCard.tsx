@@ -9,7 +9,7 @@ type MainSummaryCardProps = {
 
 const MainSummaryCard = ({Icon, title, value} : MainSummaryCardProps) => {
   return (
-    <Card className='flex-1 p-3 bg-primary/10'>
+    <Card className='flex-1 p-3 bg-primary/10 border border-primary/25'>
         <CardTitle className='flex items-center justify-start gap-x-2'>
             <Icon className='w-6 h-5 stroke-primary' />
             <span className='font-semibold text-primary'>{title}</span>
