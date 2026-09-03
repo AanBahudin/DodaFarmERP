@@ -1,17 +1,19 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardTitle } from "@/components/ui/card"
+
 import { Wrapper } from "@/shared/components"
-import { PackagePlus, Trash } from "lucide-react"
+import { PackagePlus, Trash, InfoIcon } from "lucide-react"
+// import { Field } from "@/components/ui/field"
+import { AddProductMainSection, AddProductSecondarySection } from "../components"
 
 
 const AddProductPage = () => {
   return (
     <Wrapper className="w-full">
-
       {/* header */}
-      <Card className="w-full flex flex-row items-center justify-between px-4 mb-4">
+      <Card className="w-full flex flex-row items-center justify-between px-4 mb-4 bg-primary/5 border border-primary/20">
         <div>
-          <CardTitle className="text-lg font-semibold">Tambah Produk</CardTitle>
+          <CardTitle className="text-lg font-bold">Tambah Produk</CardTitle>
           <CardDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit.</CardDescription>
         </div>
 
@@ -22,19 +24,9 @@ const AddProductPage = () => {
       </Card>
 
       <main className="w-full flex items-start justify-between gap-x-4">
-        {/* left/main section */}
-        <div className="w-2/3">
-          <Card className="w-full">
-            Main section
-          </Card>
-        </div>
-
+        <AddProductMainSection />
         {/* right section */}
-        <div className="flex-1">
-          <Card>
-            secondary section
-          </Card>
-        </div>
+        <AddProductSecondarySection />
       </main>
 
     </Wrapper>

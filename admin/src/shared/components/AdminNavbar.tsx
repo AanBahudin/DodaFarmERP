@@ -2,7 +2,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Plus, Truck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import {NavbarBreadcrumbs, NavbarCollapsibleMenu} from "@/shared/components"
+import {NavbarBreadcrumbs, NavbarCollapsibleMenu, NavbarNotificationCenter} from "@/shared/components"
 import { useNavigate } from "react-router"
 
 const AdminNavbar = () => {
@@ -17,8 +17,10 @@ const AdminNavbar = () => {
                 <NavbarBreadcrumbs />
             </main>
 
+
             <main className="flex items-center gap-x-4">
-                <Input placeholder="Cari karyawan, produk" className="w-100 focus-visible:ring-2  focus-visible:ring-primary/40 border-2 text-sm border-slate-400 py-4" />
+                <Input placeholder="Cari karyawan, produk" className="w-100 focus-visible:ring-2 focus-visible:ring-primary/40 border-2 text-sm border-slate-400 py-4" />
+                <NavbarNotificationCenter />
                 <Button type="button" onClick={() => handleNavigate("/product/tambah")} className='flex items-center justify-center bg-primary/10 text-primary hover:text-white'>
                     <Plus />
                     Produk
