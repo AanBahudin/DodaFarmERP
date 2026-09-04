@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardTitle } from "@/components/ui/card"
 
 import { Wrapper } from "@/shared/components"
-import { PackagePlus, Trash, InfoIcon } from "lucide-react"
+import { PackagePlus, Trash } from "lucide-react"
 // import { Field } from "@/components/ui/field"
 import { AddProductMainSection, AddProductSecondarySection } from "../components"
 

@@ -1,2 +1,5 @@
+export {default as AddCategoryProductContainer} from './AddCategoryProductContainer'
 export {default as AddProductMainSection} from './AddProductMainSection'
 export {default as AddProductSecondarySection} from './AddProductSecondarySection'
+export {default as CategorySelector} from './CategorySelector'
+export {default as ProductImageUploaderContainer} from './ProductImageUploaderContainer'
