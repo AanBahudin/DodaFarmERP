@@ -24,6 +24,7 @@ const AddProductPage = () => {
       </Card>
 
       <main className="w-full flex items-start justify-between gap-x-4">
+        {/* left section */}
         <AddProductMainSection />
         {/* right section */}
         <AddProductSecondarySection />

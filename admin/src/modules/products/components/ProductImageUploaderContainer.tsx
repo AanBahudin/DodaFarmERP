@@ -54,52 +54,51 @@ const ProductImageUploader = () => {
       },
     ]
 
-
   return (
     <Card className='px-4'>
-        <CardTitle className='font-semibold'>Foto Produk</CardTitle>
+      <CardTitle className='font-semibold'>Foto Produk</CardTitle>
         
-        <Card className='w-full h-70 overflow-hidden'>
-          {activeImg && (
-            <img className='w-full h-full object-contain' src={activeImg} alt="" />
-          )}
-        </Card>
-
-        <CardContent className="w-full p-0">
-          <AttachmentGroup>
-            <ScrollArea className="w-full whitespace-nowrap">
-              <div className="flex w-max gap-4 p-4">
-                {images.map((image) => (
-                  <Attachment
-                    onClick={() => handleImg(image.src)}
-                    key={image.name}
-                    orientation="vertical"
-                    className="w-50 shrink-0"
-                  >
-                    <AttachmentMedia variant="image">
-                      <img src={image.src} alt={image.alt} />
-                    </AttachmentMedia>
-
-                    <AttachmentContent>
-                      <AttachmentTitle>{image.name}</AttachmentTitle>
-                      <AttachmentDescription>
-                        {image.meta}
-                      </AttachmentDescription>
-                    </AttachmentContent>
-                  </Attachment>
-                ))}
-              </div>
-
-              <ScrollBar orientation="horizontal" />
-            </ScrollArea>
-          </AttachmentGroup>
-
-          <Field className='mt-2'>
-            <Input id="picture" type="file" className='w-full '/>
-            <FieldDescription>Pilih gambar untuk diupload</FieldDescription>
-          </Field>
-        </CardContent>
+      <Card className='w-full h-70 overflow-hidden'>
+        {activeImg && (
+          <img className='w-full h-full object-contain' src={activeImg} alt="" />
+        )}
       </Card>
+
+      <CardContent className="w-full p-0">
+        <AttachmentGroup>
+          <ScrollArea className="w-full whitespace-nowrap">
+            <div className="flex w-max gap-4 p-4">
+              {images.map((image) => (
+                <Attachment
+                  onClick={() => handleImg(image.src)}
+                  key={image.name}
+                  orientation="vertical"
+                  className="w-50 shrink-0"
+                >
+                  <AttachmentMedia variant="image">
+                    <img src={image.src} alt={image.alt} />
+                  </AttachmentMedia>
+
+                  <AttachmentContent>
+                    <AttachmentTitle>{image.name}</AttachmentTitle>
+                    <AttachmentDescription>
+                      {image.meta}
+                    </AttachmentDescription>
+                  </AttachmentContent>
+                </Attachment>
+              ))}
+            </div>
+
+            <ScrollBar orientation="horizontal" />
+          </ScrollArea>
+        </AttachmentGroup>
+
+        <Field className='mt-2'>
+          <Input id="picture" type="file" className='w-full '/>
+          <FieldDescription>Pilih gambar untuk diupload</FieldDescription>
+        </Field>
+      </CardContent>
+    </Card>
   )
 }
 

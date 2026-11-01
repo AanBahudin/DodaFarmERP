@@ -2,6 +2,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Switch } from "@/components/ui/switch"
 import { Button } from "@/components/ui/button"
 import { Plus, Trash } from "lucide-react"
 import { Field, FieldTitle } from "@/components/ui/field"
@@ -133,6 +134,65 @@ const AddProductMainSection = () => {
               </main>
             )
           })}
+        </CardContent>
+      </Card>
+
+      <Card className="w-full ">
+        <CardHeader>
+          <CardTitle>Inventory</CardTitle>
+        </CardHeader>
+
+        <CardContent>
+          <main className="grid grid-cols-2 gap-3">
+            <Field className="flex-1">
+              <FieldTitle>Nomor SKU</FieldTitle>
+              <Input type="text" placeholder="BYM - 2432"/>
+            </Field>
+            <Field className="flex-1">
+              <FieldTitle>Jumlah Stok</FieldTitle>
+              <Input type="number" placeholder="100"/>
+            </Field>
+            <Field className="flex-1">
+              <FieldTitle>Minimum Stok</FieldTitle>
+              <Input type="number" placeholder="20"/>
+            </Field>
+            <Field className="flex-1 w-full">
+              <FieldTitle>Satuan</FieldTitle>
+              <Select items={items}>
+                <SelectTrigger className="w-full">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Satuan</SelectLabel>
+                    {itemSatuan.map((item) => (
+                      <SelectItem key={item} value={item} >
+                        {item}
+                      </SelectItem>
+                    ))} 
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </Field>
+          </main>
+        </CardContent>
+      </Card>
+
+      <Card className="w-full">
+        <CardHeader>
+          <CardTitle>Informasi Tambahan</CardTitle>
+        </CardHeader>
+
+        <CardContent>
+          <main className="w-full flex items-center justify-between">
+            <Label>Ketersedian produk</Label>
+            <Switch />
+          </main>
+
+          <main className="w-full flex items-center justify-between">
+            <Label>Hapus produk</Label>
+            <Switch />
+          </main>
         </CardContent>
       </Card>
     </main>
