@@ -7,7 +7,7 @@ var AuthValidationMessage = map[string]string{
 	"Email.required": "Email tidak boleh kosong",
 	"Email.email":    "Email tidak valid",
 
-	"Password.required": "Password tidak bole kosong",
+	"Password.required": "Password tidak boleh kosong",
 	"Password.min":      "Password minimal 8 karakter",
 	"Password.max":      "Password tidak boleh lebih dari 20 karakter",
 }

@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/AanBahudin/DodaFarmERP/database"
+	"github.com/AanBahudin/DodaFarmERP/modules/auth"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )
@@ -14,11 +15,7 @@ func main() {
 
 	router := gin.Default()
 
-	router.GET("/", func(ctx *gin.Context) {
-		ctx.JSON(200, gin.H{
-			"message": "ok",
-		})
-	})
-
+	// router cold start
+	auth.AuthRoute(router)
 	router.Run(":8080")
 }

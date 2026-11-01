@@ -29,12 +29,14 @@ func RegisterController(context *gin.Context) {
 	if err != nil {
 		validationError := pkg.ParseValidationError(err, AuthValidationMessage)
 		helpers.ErrorResponse(context, validationError)
+		return
 	}
 
 	// services
 	err = RegisterServices(&userInput, context)
 	if err != nil {
 		helpers.ErrorResponse(context, err)
+		return
 	}
 
 	context.JSON(http.StatusCreated, gin.H{
