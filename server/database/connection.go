@@ -3,23 +3,28 @@ package database
 import (
 	"context"
 	"fmt"
-	"log"
 	"os"
 
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
-func DBConnection() {
+func DBConnection() (*pgxpool.Pool, error) {
 
-	pool, err := pgxpool.New(context.Background(), os.Getenv("DATABASE_CONNECTION"))
+	pool, err := pgxpool.New(
+		context.Background(),
+		os.Getenv("DATABASE_CONNECTION"),
+	)
+
 	if err != nil {
-		log.Fatal("gagal membuat pool: ", err)
+		return nil, fmt.Errorf("gagal membuat pool: %w", err)
 	}
-
-	defer pool.Close()
 
 	if err := pool.Ping(context.Background()); err != nil {
-		log.Fatal("gagal terhubung: ", err)
+		pool.Close()
+		return nil, fmt.Errorf("gagal terhubung: %w", err)
 	}
+
 	fmt.Println("Berhasil terhubung ke PostgreSQL")
+
+	return pool, nil
 }

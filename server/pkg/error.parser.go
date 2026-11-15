@@ -8,7 +8,7 @@ import (
 func ParseValidationError(err error, message map[string]string) *errors.ServerError {
 	validationErrors, ok := err.(validator.ValidationErrors)
 	if !ok {
-		return errors.BadRequestError("Invalid input")
+		return errors.BadRequestError("Invalid input, please try again")
 	}
 
 	for _, fieldError := range validationErrors {
